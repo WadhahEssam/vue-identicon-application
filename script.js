@@ -32,8 +32,11 @@ var app = new Vue({
   },
   computed: { 
     identicon: function() {
+      if(this.inputText == '') {
+        return `<h3>No Input Yet<h3>`;
+      }
       return `
-        <img src="https://identicon-api.herokuapp.com/${(this.inputText != '') ? this.inputText : 'default'}/200/?format=png">
+        <img src="https://identicon-api.herokuapp.com/${this.inputText}/200/?format=png">
       `; 
     }
   },
