@@ -24,6 +24,7 @@
 // if you want to create a new state , you write (this.data.inputText) 
 // both of those will cause the whole html to rerender again
 
+console.log(window.jdenticon);
 var app = new Vue({
   el: '#app',
   data: {
@@ -31,7 +32,9 @@ var app = new Vue({
   },
   computed: { 
     identicon: function() {
-      return `<svg width="200" height="200" data-jdenticon-value="${this.inputText}"></svg>`; 
+      return `
+        <img src="https://identicon-api.herokuapp.com/${(this.inputText != '') ? this.inputText : 'default'}/200/?format=png">
+      `; 
     }
   },
   methods: {
