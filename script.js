@@ -23,6 +23,10 @@
 // this.(name of variable) > this changes the state (this.setState)
 // if you want to create a new state , you write (this.data.inputText) 
 // both of those will cause the whole html to rerender again
+// 
+// you can simply move the code inside the #app div and put it in the
+// tamplate option, and this is the way how it is going to be used
+// when writing actual applications 
 
 console.log(window.jdenticon);
 var app = new Vue({
